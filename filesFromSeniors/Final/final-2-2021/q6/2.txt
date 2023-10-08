@@ -1,0 +1,39 @@
+What is the essential property of a bounding function that will guarantee the correctness of the 
+depth-first search algorithm?
+
+The essential property of a bounding function that guarantees the correctness of a depth-first search 
+(DFS) algorithm is that it must satisfy the following conditions:
+
+Monotonicity (or Non-Decreasing): The bounding function should be non-decreasing along the search tree. 
+In other words, as the algorithm progresses deeper into the tree, the bounding function's value should 
+either increase or remain the same. Formally, for any node u in the tree, if u is an ancestor of node v, 
+then the bounding function value at node u should be less than or equal to the bounding function value at node v.
+
+Mathematically, if f(u) represents the bounding function value at node u, and u is an ancestor of v, then f(u) <= f(v).
+This property ensures that the bounding function always provides an upper bound on the potential solution's 
+value, and it avoids situations where the bounding function incorrectly indicates that a branch has potential 
+when it does not. Monotonicity guarantees that the DFS algorithm remains correct because it prunes branches 
+based on a valid upper bound without compromising optimality.
+
+In essence, a bounding function's monotonicity ensures that the algorithm's pruning decisions are made 
+logically and do not lead to incorrect solutions. Without this property, the correctness of the DFS 
+algorithm could be compromised, and it might not guarantee optimal or valid solutions.
+
+Admissibility: The bounding function should be admissible, which means that it should provide a lower 
+bound on the cost or value of the optimal solution. Formally, for any node v in the search tree, the 
+bounding function value f(v) should always be less than or equal to the cost or value of the optimal 
+solution from node v to a leaf node.
+
+Mathematically, if f(v) represents the bounding function value at node v, and c*(v) represents the 
+cost or value of the optimal solution from node v to a leaf node, then f(v) <= c*(v).
+The admissibility property ensures that the bounding function does not overestimate the potential 
+value of a branch, as it must always provide a lower bound on the true optimal solution value. 
+When a bounding function is admissible, the depth-first search algorithm can confidently prune 
+branches whose bounding function values exceed the current best-known solution, knowing that it 
+is eliminating subproblems that cannot lead to a better (optimal) solution.
+
+In summary, both monotonicity and admissibility are crucial properties of bounding functions 
+in DFS algorithms. Monotonicity ensures that the bounding function guides the search correctly, 
+and admissibility guarantees that it provides valid and safe pruning criteria while maintaining 
+the correctness of the algorithm. Together, these properties help improve the efficiency of the 
+DFS algorithm while ensuring the accuracy of its results.

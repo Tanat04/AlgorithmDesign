@@ -1,0 +1,13 @@
+Which One Is Better:
+
+The choice between Knapsack Branch and Bound and Knapsack Bound may depend on the characteristics of your problem instances.
+Knapsack Branch and Bound with the heuristic sorting can be more effective when you have a good heuristic that helps you prioritize items effectively.
+Knapsack Bound is a more general approach and can be used when you don't have a specific heuristic or when the heuristic doesn't significantly improve the bound.
+In practice, you may want to experiment with both approaches on your specific problem instances to see which one performs better.
+
+
+Comparison to DP Approach:
+
+Both Knapsack Branch and Bound and Knapsack Bound are potentially more efficient than the DFS approach because they use bounds and pruning strategies to reduce the search space.
+However, the DP approach is generally the most efficient and reliable method for solving the 0/1 Knapsack problem. It guarantees an optimal solution and has a time complexity of O(N*C), where N is the number of items and C is the knapsack capacity.
+The DP approach should be the first choice for solving the 0/1 Knapsack problem unless specific characteristics of your problem instances make the other approaches more effective.

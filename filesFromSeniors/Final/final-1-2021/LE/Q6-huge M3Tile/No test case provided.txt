@@ -1,0 +1,4 @@
+The solution is already given in the question. The problem is
+only on the efficiency of the implementation. Thus, only the
+examples in the question is adequate for understanding what the
+question requires.
